@@ -8,10 +8,14 @@ formEl.addEventListener('submit', (event) => {
     if (emailField[0].value === '' || emailField[1].value === '') {
         alert('fill all fields');
     } else {
+        console.log(event.currentTarget)
         const {
             elements: { email, password }
         } = event.currentTarget;
-        console.log(`email: ${email.value}`);
-        console.log(`password: ${password.value}`);
+        console.log({
+            email: email.value,
+            password: password.value
+        })
+        formEl.reset()
     }
 });
