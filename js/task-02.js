@@ -8,11 +8,15 @@ const ingredients = [
 ];
 const list = document.querySelector('#ingredients');
 
-let answ = "";
+let answ = [];
 ingredients.map(el => {
-  answ += `<li>${el}</li>`
+  const liInit = document.createElement('li')
+  liInit.textContent = `${el}`
+  liInit.classList.add('item');
+  answ.push(liInit)
 })
-list.innerHTML = answ;
+
+list.before(...answ)
 
 
 
